@@ -1,7 +1,7 @@
 ;
 ; Graphic mouse cursor (C) BlockHead aka M.Jerry (Guru)
 ;
-; This program has been developed on those videoadapter and mouse
+; This program has been developed for the videoadapter and mouse
 ; driver which I had at work (S3 ViRGE and standard WinNT Microsoft
 ; Serial Mouse driver). The specs of those:
 ; Character set:
@@ -34,10 +34,10 @@ CHARSHIFT  equ  5              ; LOG (2) CHARSTEP
 
 MASKSIZE   equ  16             ; cursor mask height (scanlines)
 
-CHAR0   equ     0D7h ; 'Ú'
-CHAR1   equ     008h ; '¿'
-CHAR2   equ     0D8h ; 'À'
-CHAR3   equ     00Eh ; 'Ù'
+CHAR0   equ     0D7h ; 'Ãš'
+CHAR1   equ     008h ; 'Â¿'
+CHAR2   equ     0D8h ; 'Ã€'
+CHAR3   equ     00Eh ; 'Ã™'
 CHFF0   equ     (CHAR0*CHARSTEP)
 CHFF1   equ     (CHAR1*CHARSTEP)
 CHFF2   equ     (CHAR2*CHARSTEP)
