@@ -13,7 +13,7 @@ myself. So I came out with this TUI library which I used for about a year until 
 
 The demo program (TUIDEMO.EXE) only uses 69 Kb of memory, demonstrates some of the most useful components --
 open file dialog, message box, input box, calendar, different lists and a progress bar which we were using 
-MUCH those days :)
+MUCH those days :) Also, please note the "graphic" mouse pointer in text mode, rarely seen in UI back then.
 
 ## Screenshot
 
