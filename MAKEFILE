@@ -1,0 +1,106 @@
+.AUTODEPEND
+
+#               *Translator Definitions*
+CC = bcc +TUIDEMO.CFG
+TASM = h:\BC\BIN\TASM
+TLIB = tlib
+TLINK = tlink
+LIBPATH = h:\BC\LIB
+INCLUDEPATH = h:\BC\INCLUDE
+
+
+#               *Implicit Rules*
+.c.obj:
+  $(CC) -c {$< }
+
+.cpp.obj:
+  $(CC) -c {$< }
+
+#               *List Macros*
+
+
+EXE_dependencies =  \
+ textio.obj \
+ tuifiles.obj \
+ tuikeys.obj \
+ tuimouse.obj \
+ tuidate.obj \
+ tuistr.obj \
+ tuistd.obj \
+ tuiext.obj \
+ tuigraph.obj \
+ tuidlgs.obj \
+ tuidemo.obj \
+ gmouse.obj
+
+#               *Explicit Rules*
+tuidemo.exe: tuidemo.cfg $(EXE_dependencies)
+  $(TLINK) /v/x/c/d/P-/L$(LIBPATH) @&&|
+c0l.obj+
+textio.obj+
+tuifiles.obj+
+tuikeys.obj+
+tuimouse.obj+
+tuidate.obj+
+tuistr.obj+
+tuistd.obj+
+tuiext.obj+
+tuigraph.obj+
+tuidlgs.obj+
+tuidemo.obj+
+gmouse.obj
+tuidemo
+                # no map file
+cl.lib
+|
+
+
+#               *Individual File Dependencies*
+textio.obj: tuidemo.cfg textio.cpp
+
+tuifiles.obj: tuidemo.cfg tuifiles.cpp
+
+tuikeys.obj: tuidemo.cfg tuikeys.cpp
+
+tuimouse.obj: tuidemo.cfg tuimouse.cpp
+
+tuidate.obj: tuidemo.cfg tuidate.cpp
+
+tuistr.obj: tuidemo.cfg tuistr.cpp
+
+tuistd.obj: tuidemo.cfg tuistd.cpp
+
+tuiext.obj: tuidemo.cfg tuiext.cpp
+
+tuigraph.obj: tuidemo.cfg tuigraph.cpp
+
+tuidlgs.obj: tuidemo.cfg tuidlgs.cpp
+
+tuidemo.obj: tuidemo.cfg tuidemo.cpp
+
+gmouse.obj: tuidemo.cfg gmouse.asm
+        $(TASM) /MX /M2 /ZI /O GMOUSE.ASM,GMOUSE.OBJ
+
+#               *Compiler Configuration File*
+tuidemo.cfg: tuidemo.mak
+  copy &&|
+-R
+-ml
+-2
+-f-
+-C
+-v
+-y
+-k-
+-r-
+-d
+-H=TUIDEMO.SYM
+-wpro
+-weas
+-wpre
+-I$(INCLUDEPATH)
+-L$(LIBPATH)
+-P-.C
+| tuidemo.cfg
+
+

@@ -1,0 +1,44 @@
+Short reference:
+
+* Tab / Shift+Tab       - move between elements
+* Esc                   - close dialog discarding changes
+* Ctrl+F5, arrow keys   - move window
+* Enter or Space        - press a button
+* Space on [x] or (*)   - select
+* highlighted symbols (shortcuts) are working unless other
+  component has captured input. Edit lines usually do that.
+
+Mouse allows to set focus, press buttons, select items.
+Also can move windows using mouse by window header.
+
+Lists:
+* TList       - basic vertical list, standard dialog component
+* TMenuList   - pop-up window with the list
+* TColumnList - list with colums (as seen in FileOpen dialog)
+* TCustomList - fully customizable list; developer controlled
+
+For example, this parrticualr list is a TCustomList and it
+allows to "tag" lines using Space key. Also, you can scroll
+using left and right arrow keys.
+
+TButton, TCheckBox and TRadioButton has built-in hotkeys.
+For other components you can define hotkeys using THotKey
+(invisible) component.
+
+There are two evBroadcast-type events: cmUpdate and cmActivate.
+They are handled by each TUI component. cmUpdate can be local
+or global. Global cmUpdate calls Update() for all components and
+is invoked this way:
+
+PostMessage( evBroadcast, cmUpdate );
+
+Local cmUpdate updates component specified in target parameter:
+
+  // global var
+  TEdit* myedit;
+  // in some component's code:
+  PostMessage( evBroadcast, cmUpdate, myedit );
+
+cmActivate sets focus on specified component if it is marked as TabStop,
+or the first component with TabStop.
+
