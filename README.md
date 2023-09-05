@@ -4,15 +4,15 @@ TUI (text user interface) library
 ## The story
 
 Back in 2000 when I was working for one local book store we had a legacy backoffice written in C++ for DOS.
-The foundation was written by my boss several years before. The code style was messy but the most painful part
-was the user interface. I could not stand the dumb way the UI was programmed (mostly by copy-pasting blocks
-of existing code) so I decided to make it my way. I tried using Turbo Vision but it was too heavy for our
-needs and used too many memory and remember we were using only 640 Kb of RAM for running the program (and 
-extended  memory for the data). Also I was keen to try to develop something (much simplier than Turbo Vision)
+The foundation was written by my boss several years before. The code style was messy but the most painful
+part was the user interface. I could not stand the dumb way the UI was programmed (mostly by copy-pasting
+blocks of existing code) so I decided to make it my way. I tried using Turbo Vision but it was too heavy
+for our needs and used too much RAM and remember we were using only 640 Kb of convenient memory for running
+the program itself plus extended memory for the data. Also I was keen to try to develop something similar 
 myself. So I came out with this TUI library which I used for about a year until I left the company.
 
-The demo program (TUIDEMO.EXE) only uses 69 Kb of memory, demonstrates some of the most useful components --
-open file dialog, message box, input box, calendar, different lists and a progress bar which we were using 
+The demo program (TUIDEMO.EXE) only uses 69 Kb of memory and demonstrates some of the most useful components
+-- open file dialog, message box, input box, calendar, different lists and a progress bar which we were using 
 MUCH those days :) Also, please note the "graphic" mouse pointer in text mode, rarely seen in UI back then.
 
 ## Screenshot
